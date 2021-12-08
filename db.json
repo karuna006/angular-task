@@ -3,19 +3,19 @@
     {
       "text": "Doctors Appointment",
       "day": "2021-12-23T14:12",
-      "reminder": true,
+      "reminder": false,
       "id": 7
     },
     {
       "text": "Meeting at School",
       "day": "2021-12-17T14:12",
-      "reminder": true,
+      "reminder": false,
       "id": 8
     },
     {
       "text": "Food Shopping",
       "day": "2021-12-24T14:12",
-      "reminder": true,
+      "reminder": false,
       "id": 9
     },
     {
@@ -23,6 +23,12 @@
       "day": "2021-12-18T20:21",
       "reminder": true,
       "id": 10
+    },
+    {
+      "text": "demo",
+      "day": "2021-12-18T09:31",
+      "reminder": true,
+      "id": 11
     }
   ]
 }
