@@ -2,6 +2,7 @@ import { Component, OnInit ,Output,EventEmitter} from '@angular/core';
 import { UiService } from "../../services/ui.service";
 import { Subscription } from "rxjs";
 import { Task } from "../../Task";
+import { NotiService } from '../../services/noti.service'
 
 @Component({
   selector: 'app-add-task',
@@ -17,7 +18,7 @@ export class AddTaskComponent implements OnInit {
   showAddTask!: boolean;
   subscription!: Subscription;
 
-  constructor(private uiservice:UiService) { 
+  constructor(private uiservice:UiService,private notifyService : NotiService) { 
     this.subscription = this.uiservice.onToggle().subscribe((value) => (this.showAddTask=value))
    }
 
@@ -28,13 +29,15 @@ export class AddTaskComponent implements OnInit {
   {
     if(!this.text)
     {
-      alert('Please add a task!');
+      this.notifyService.showWarning("Please add a task !!", "Warning");
+      // alert('Please add a task!');
       return;
     }
 
     if(!this.day)
     {
-      alert('Please add a Day!');
+      this.notifyService.showWarning("Please add a day !!", "Warning");
+      // alert('Please add a Day!');
       return;
     }
 

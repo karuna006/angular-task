@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {NgxPaginationModule} from 'ngx-pagination';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
@@ -13,6 +14,8 @@ import { TasksItemComponent } from './componets/tasks-item/tasks-item.component'
 import { AddTaskComponent } from './componets/add-task/add-task.component';
 import { AboutComponent } from './componets/about/about.component';
 import { FooterComponent } from './componets/footer/footer.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 const appRoutes: Routes = [
   {
@@ -40,9 +43,12 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     FontAwesomeModule,
+    NgxPaginationModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes , {enableTracing:true})
+    RouterModule.forRoot(appRoutes , {enableTracing:true}),
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent],
