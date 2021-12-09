@@ -1,0 +1,8 @@
+<br>
+<nav aria-label="Page navigation example" style="padding-left: 38%;">
+    <ul class="pagination">        
+        <!-- <li class="page-item"><a class="page-link" (click)="loadData(pre)" href="#">Previous</a></li> -->
+        <li *ngFor="let no of pagelist let index = index" class="page-item"><a (click)="loadData(index+1)" class="page-link" href="#">{{index+1}}</a></li>        
+        <!-- <li class="page-item"><a class="page-link" (click)="loadData(nxt)" href="#">Next</a></li> -->
+    </ul>
+</nav>

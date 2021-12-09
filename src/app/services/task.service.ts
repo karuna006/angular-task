@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient,HttpHeaders } from "@angular/common/http";
 import { Observable, ObservableInput} from "rxjs";
 import { Task } from "../Task";
-import { NotiService } from './noti.service'
+import { NotiService } from './noti.service';
+
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -13,7 +14,10 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
+
 export class TaskService {
+
+  PageSize = 2;
   private apiurl = 'http://localhost:5000/tasks';
   constructor(private http:HttpClient,private notifyService : NotiService) {}
 
@@ -43,5 +47,10 @@ export class TaskService {
   {
     this.notifyService.showSuccess("New Task Addedd !!", "Success");
     return this.http.post<Task>(this.apiurl,task,httpOptions);
+  }
+
+  getPageSize()
+  {    
+    return this.PageSize;
   }
 }

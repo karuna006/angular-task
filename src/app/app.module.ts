@@ -5,7 +5,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
 import { RouterModule,Routes } from "@angular/router";
-
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './componets/header/header.component';
 import { ButtonComponent } from './componets/button/button.component';
@@ -16,6 +15,7 @@ import { AboutComponent } from './componets/about/about.component';
 import { FooterComponent } from './componets/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { PaginationComponent } from './componets/pagination/pagination.component';
 
 const appRoutes: Routes = [
   {
@@ -25,8 +25,7 @@ const appRoutes: Routes = [
   {
     path: 'about',
     component:AboutComponent
-  }
-
+  }  
 ]
 
 @NgModule({
@@ -38,7 +37,9 @@ const appRoutes: Routes = [
     TasksItemComponent,
     AddTaskComponent,
     AboutComponent,
-    FooterComponent    
+    FooterComponent,
+    PaginationComponent ,
+  
   ],
   imports: [
     BrowserModule,
@@ -48,7 +49,7 @@ const appRoutes: Routes = [
     FormsModule,
     RouterModule.forRoot(appRoutes , {enableTracing:true}),
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],
