@@ -21,6 +21,7 @@ export class PaginationComponent implements OnInit {
   tasks: Task[] = [];
   pageNocontent:string = '';
   pagelist:any;
+  initpage = 1;
   private apiurl = 'http://localhost:5000/tasks';
 
   constructor(private http:HttpClient,private taskService:TaskService,private taskscomponent:TasksComponent) { }
