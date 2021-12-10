@@ -20,18 +20,15 @@ export class PaginationComponent implements OnInit {
   page_data: Task[] = [];
   tasks: Task[] = [];
   pageNocontent:string = '';
-  pagelist:any;
-  pagelist1 = this.taskService.loadPageCount(14);
+  pagelist:any;  
   initpage = 1;
-  noofpage = this.getTaskData();
   private apiurl = 'http://localhost:5000/tasks';
 
   constructor(private http:HttpClient,private taskService:TaskService,private taskscomponent:TasksComponent) { }
 
   ngOnInit(): void {
     this.getTaskData();
-    // console.log('page:',this.taskscomponent.pagelist);
-    console.log(this.noofpage);
+    // console.log('page:',this.taskscomponent.pagelist);  
   }
 
   getTaskData(){

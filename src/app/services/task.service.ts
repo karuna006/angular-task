@@ -44,20 +44,11 @@ export class TaskService {
   }
 
   addTask(task: Task):Observable<Task>
-  {
-    this.loadPageCount(3);
+  {    
     this.notifyService.showSuccess("New Task Addedd !!", "Success");
     return this.http.post<Task>(this.apiurl,task,httpOptions);
   }
-
-  loadPageCount(no: number | undefined)
-  {
-    this.pagelist = no;
-    console.log(">>>>",this.pagelist)
-    return this.pagelist;
-   
-  }
-
+  
   getPageSize()
   {
     // const tasks = of(TASKS);
