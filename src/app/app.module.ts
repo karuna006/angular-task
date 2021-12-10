@@ -4,6 +4,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
+import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule,Routes } from "@angular/router";
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './componets/header/header.component';
@@ -16,6 +17,7 @@ import { FooterComponent } from './componets/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { PaginationComponent } from './componets/pagination/pagination.component';
+import { DataService } from './services/data.service';
 
 const appRoutes: Routes = [
   {
@@ -47,13 +49,13 @@ const appRoutes: Routes = [
     NgxPaginationModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(appRoutes , {enableTracing:true}),
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],
-  exports: [RouterModule],
-  
+  exports: [RouterModule],  
 })
 export class AppModule { }

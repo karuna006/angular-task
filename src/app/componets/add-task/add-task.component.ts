@@ -2,7 +2,7 @@ import { Component, OnInit ,Output,EventEmitter} from '@angular/core';
 import { UiService } from "../../services/ui.service";
 import { Subscription } from "rxjs";
 import { Task } from "../../Task";
-import { NotiService } from '../../services/noti.service'
+import { NotiService } from '../../services/noti.service';
 
 @Component({
   selector: 'app-add-task',
@@ -11,6 +11,7 @@ import { NotiService } from '../../services/noti.service'
 })
 export class AddTaskComponent implements OnInit {
   @Output() onAddTask: EventEmitter<Task> = new EventEmitter();
+  
   
   text!:string;
   day!:string;
@@ -39,7 +40,7 @@ export class AddTaskComponent implements OnInit {
       this.notifyService.showWarning("Please add a day !!", "Warning");
       // alert('Please add a Day!');
       return;
-    }
+    }    
 
     const newTask = {
       text: this.text,

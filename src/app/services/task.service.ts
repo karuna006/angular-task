@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient,HttpHeaders } from "@angular/common/http";
-import { Observable, ObservableInput} from "rxjs";
+import { Observable, ObservableInput, retry} from "rxjs";
 import { Task } from "../Task";
 import { NotiService } from './noti.service';
-
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -18,6 +17,7 @@ const httpOptions = {
 export class TaskService {
 
   PageSize = 2;
+  pagelist:any;
   private apiurl = 'http://localhost:5000/tasks';
   constructor(private http:HttpClient,private notifyService : NotiService) {}
 
@@ -45,12 +45,24 @@ export class TaskService {
 
   addTask(task: Task):Observable<Task>
   {
+    this.loadPageCount(3);
     this.notifyService.showSuccess("New Task Addedd !!", "Success");
     return this.http.post<Task>(this.apiurl,task,httpOptions);
   }
 
+  loadPageCount(no: number | undefined)
+  {
+    this.pagelist = no;
+    console.log(">>>>",this.pagelist)
+    return this.pagelist;
+   
+  }
+
   getPageSize()
-  {    
+  {
+    // const tasks = of(TASKS);
+    // return tasks;
+    // console.log(this.http.get<Task[]>(this.apiurl));
     return this.PageSize;
   }
 }

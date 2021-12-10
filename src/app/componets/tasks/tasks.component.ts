@@ -53,5 +53,6 @@ export class TasksComponent implements OnInit {
         // console.log(this.pagelist);
       }
     );
+    
   } 
 }
