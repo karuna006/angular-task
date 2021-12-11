@@ -1,0 +1,7 @@
+<form class="add-form" (ngSubmit)="onSubmit()">
+    <div class="form-control">
+        <label for="text">Tags</label>
+        <input type="text" [(ngModel)]="tags" name="tags" placeholder="Tags" required>
+    </div>
+    <input type="submit" value="Add Tags" class="btn btn-block">
+</form>

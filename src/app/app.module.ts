@@ -17,6 +17,7 @@ import { FooterComponent } from './componets/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { PaginationComponent } from './componets/pagination/pagination.component';
+import { TagsComponent } from './componets/tags/tags.component';
 
 const appRoutes: Routes = [
   {
@@ -26,6 +27,10 @@ const appRoutes: Routes = [
   {
     path: 'about',
     component:AboutComponent
+  },
+  {
+    path: 'tags',
+    component:TagsComponent
   }  
 ]
 
@@ -39,7 +44,8 @@ const appRoutes: Routes = [
     AddTaskComponent,
     AboutComponent,
     FooterComponent,
-    PaginationComponent ,
+    PaginationComponent,
+    TagsComponent ,
   
   ],
   imports: [
