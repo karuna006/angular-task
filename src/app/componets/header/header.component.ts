@@ -20,6 +20,7 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // this.showAddTask = false;    
   }
 
   toggleAddTask()
@@ -27,7 +28,7 @@ export class HeaderComponent implements OnInit {
     this.uiservice.toggleAddTask();
   }
 
-  hasRoute(route: string){    
+  hasRoute(route: string){        
     return this.router.url === route;
   }
 }

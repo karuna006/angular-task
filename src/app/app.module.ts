@@ -17,7 +17,6 @@ import { FooterComponent } from './componets/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { PaginationComponent } from './componets/pagination/pagination.component';
-import { DataService } from './services/data.service';
 
 const appRoutes: Routes = [
   {

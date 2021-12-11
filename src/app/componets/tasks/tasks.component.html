@@ -1,3 +1,5 @@
 <app-add-task (onAddTask)="addTask($event)"></app-add-task>
-<app-tasks-item *ngFor="let task of tasks" [task]="task" (onDeleteTask)="DeleteTask(task)" (onToggleReminder)="ToggleReminder(task)"></app-tasks-item>
-<app-pagination #page1 (onLoadNewTask)="LoadData($event)"></app-pagination>
+<!-- {{Minheight}} -->
+<app-tasks-item [Minheight]='Minheight' *ngFor="let task of tasks" [task]="task" (onDeleteTask)="DeleteTask(task)" (onToggleReminder)="ToggleReminder(task)"></app-tasks-item>
+<!-- {{newpagelist}} -->
+<app-pagination taskcount="{{newpagelist}}" (onLoadNewTask)="LoadData($event)"></app-pagination>
